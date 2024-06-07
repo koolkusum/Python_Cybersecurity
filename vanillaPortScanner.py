@@ -8,6 +8,7 @@ def get_local_ip():
 def port_scan(ip, port_range):
     open_ports = []
     for port in range(port_range[0], port_range[1] + 1):
+        #ipv4 socket and TCP stream
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(1)
         result = sock.connect_ex((ip, port))
